@@ -84,12 +84,7 @@
                         <li class="nav-item"><a class="nav-link" href="./gallery.php">Gallery</a></li>
                         <li class="nav-item"><a class="nav-link" href="./contact.php">Contact</a></li>
                         <li class="nav-item"><a class="nav-link" href="./about.php">About</a></li>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Login
-                            </button>
-                           
-                        </div>
+                       
                         <!-- <li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Pages</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">

@@ -4,6 +4,11 @@
     include './connection.php';
     $error = '';
     $msg = '';
+
+    if($id== 0 ){
+        header('location: ./index.php');
+    }else{
+
     if(isset($_POST['new'])){
         $name      = $_POST['name'];
         $description      = $_POST['description'];
@@ -22,6 +27,7 @@
         $result1 = mysqli_query($con, $sql2);
         $msg = "Successfuly Registered a new product";
     }
+}
 ?>
 
 

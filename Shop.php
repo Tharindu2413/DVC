@@ -127,22 +127,7 @@
 		</div>
 	</div>
 	<!-- End All Pages -->
-	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
 
-
-
-</button>
-<div class="collapse navbar-collapse" id="collapsibleNavbar">
-  <ul class="navbar-nav ml-auto">
-	<li class="nav-item">
-	  <a class="nav-link" href="./cart/checkout.php"><i class="fas fa-money-check-alt mr-2"></i>Checkout</a>
-	</li>
-	<li class="nav-item">
-	  <a class="nav-link" href="./cart/cart.php"><i class="fas fa-shopping-cart"></i> <span id="cart-item" class="badge badge-danger"></span></a>
-	</li>
-  </ul>
-</div>
-</nav>
 
 	<!-- Start Stuff -->
 	<div class="stuff-box">
@@ -166,49 +151,24 @@
       $result = $stmt->get_result();
       while ($row = $result->fetch_assoc()) :
       ?>
-        <div class="col-sm-6 col-md-4 col-lg-3 mb-2">
-          <div class="card-deck">
-            <div class="card p-2 border-secondary mb-2">
-              <img src="./images/products/<?= $row['image'] ?>" class="card-img-top" height="250">
-              <div class="card-body p-1">
-                <h4 class="card-title text-center text-info"><?= $row['name'] ?></h4>
-                <h5 class="card-text text-center text-danger"><i class="fas fa-dollar-sign"></i>&nbsp;&nbsp;<?= number_format($row['price'], 2) ?>/-</h5>
-
-              </div>
-              <div class="card-footer p-1">
-                <form action="" class="form-submit">
-                  <div class="row p-2">
-                    <div class="col-md-6 py-1 pl-4">
-                      <b>Quantity : </b>
+      <div class="col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+							<!-- <img src="./images/" alt=""> -->
+                            <img src="./images/products/<?= $row['image']?>">
+                            <ul class="social">
+								<div class="col-lg-12">
+									<!-- <h1>Welcome shopping area</h1> -->
+									</div>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title"></h3>
+                            <span class="post">Product Name :<?= $row['name'] ?></span>
+							<span class="post">Price    : $ <?= $row['price'] ?></span>
+							<span class="post">Quantity : <?= $row['qty'] ?></span>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                      <input type="number" class="form-control qty" value="1" min="1">
-                    </div>
-                  </div>
-                  <input type="hidden" class="id" value="<?= $row['id'] ?>">
-                  <input type="hidden" class="name" value="<?= $row['name'] ?>">
-                  <input type="hidden" class="price" value="<?= $row['price'] ?>">
-                  <input type="hidden" class="image" value="./images/product/<?= $row['image'] ?>">
-                  <!-- <input type="hidden" class="code" value="<?= $code ?>"> -->
-                
-					<?php 
-                  $sql = "SELECT * FROM users WHERE id='$id' ";
-                  $RES = mysqli_query($con, $sql);
-                  $result = mysqli_fetch_assoc($RES);
-                        if ($result['usertype'] != 'Admin') {
-                          ?> 
-						   <button class="btn btn-success btn-block addItemBtn"><i class="fas fa-cart-plus"></i>&nbsp;&nbsp;Add to
-                    cart</button>
-
-						  <?php } else {?>
-							
-							<button class="btn btn-danger btn-block addItemBtn"></i>&nbsp;&nbsp;delete</button>
-							<?php } ?>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
+                </div>
       <?php endwhile; ?>
     </div>
             </div>

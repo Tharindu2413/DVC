@@ -5,6 +5,11 @@
     include './connection.php';
     $error = '';
     $msg = '';
+
+    if($id== 0 ){
+        header('location: ./index.php');
+    }else{
+
     if(isset($_POST['new'])){
         $name      = $_POST['name'];
         $description  = $_POST['description'];
@@ -26,7 +31,7 @@
         $msg = "Successfully Registered a new product";
     }
 
-
+    }
 ?>
 
 
@@ -89,17 +94,7 @@
                         <li class="nav-item"><a class="nav-link" href="./gallery.php">Gallery</a></li>
                         <li class="nav-item"><a class="nav-link" href="./contact.php">Contact</a></li>
                         <li class="nav-item"><a class="nav-link" href="./about.php">About</a></li>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Login
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Login</a>
-                                <a class="dropdown-item" href="#">Register</a>
-
-
-                            </div>
-                        </div>
+                       
                         <!-- <li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Pages</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">

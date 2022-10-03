@@ -111,6 +111,7 @@ if (isset($_POST['new'])) {
             <div class="row">
                 <div class="col-lg-12">
                     <h1>Welcome To Contact US Section</h1>
+                    <a href="./contact.php" class="btn btn-primary stretched-link">Back</a>
                 </div>
             </div>
         </div>

@@ -102,6 +102,7 @@
 		</nav>
 	</header>
 	<!-- End header -->
+	<!-- End header -->
 	
 	<!-- Start All Pages -->
 	<div class="all-page-title page-breadcrumb">
@@ -158,19 +159,7 @@
 							</ul>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis arcu. Nullam facilisis, eros in eleifend luctus, odio ante sodales augue, eget lacinia lectus erat et sem. </p>
 							<p>Sed semper orci sit amet porta placerat. Etiam quis finibus eros. </p>
-							<?php 
-                  $sql = "SELECT * FROM users WHERE id='$id' ";
-                  $RES = mysqli_query($con, $sql);
-                  $result = mysqli_fetch_assoc($RES);
-                        if ($result['usertype'] != 'Admin') {
-                          ?> 
-												<a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Read More</a>
-
-
-						  <?php } else {?>
 							
-							<button class="btn btn-danger btn-block addItemBtn"></i>&nbsp;&nbsp;delete</button>
-							<?php } ?>
 						</div>
 					</div>
 				</div>

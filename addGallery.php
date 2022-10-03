@@ -4,6 +4,10 @@
     include './connection.php';
     $error = '';
     $msg = '';
+
+    if($id== 0 ){
+        header('location: ./index.php');
+    }else{
     if(isset($_POST['new'])){
         
      
@@ -20,7 +24,7 @@
         $msg = "Successfuly added a new Photo";
     }
 
-
+    }
 ?>
 
 
