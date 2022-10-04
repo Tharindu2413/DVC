@@ -5,9 +5,9 @@
     $error = '';
     $msg = '';
 
-    if($id== 0 ){
-        header('location: ./index.php');
-    }else{
+    // if($id== 0 ){
+    //     header('location: ./index.php');
+    // }else{
 
     if(isset($_POST['new'])){
         $name      = $_POST['name'];
@@ -26,7 +26,7 @@
       
         $result1 = mysqli_query($con, $sql2);
         $msg = "Successfuly Registered a new product";
-    }
+    // }
 }
 ?>
 

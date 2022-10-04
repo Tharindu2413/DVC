@@ -54,7 +54,7 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbars-rs-food">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
 						<li class="nav-item"><a class="nav-link" href="./Shop.php">Shop</a></li>
                         <li class="nav-item"><a class="nav-link" href="./events.php">Events</a></li>
 						<li class="nav-item"><a class="nav-link" href="./gallery.php">Gallery</a></li>
@@ -145,7 +145,199 @@
 	</div>
 	<!-- End About -->
 	
+<!-- Start Stuff -->
+<div class="stuff-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<h2>Our Sponsors</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="https://static.wixstatic.com/media/0f70ca_773cc9faf48b41038f4d662f8ac2d9f2~mv2_d_1200_1200_s_2.jpg/v1/fill/w_650,h_650,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/0f70ca_773cc9faf48b41038f4d662f8ac2d9f2~mv2_d_1200_1200_s_2.jpg ">
+                           
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Adam's Polishes</h3>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="https://static.wixstatic.com/media/0f70ca_3cb72f57c7a841f188a1508c985e8b0e~mv2.jpg/v1/fill/w_650,h_650,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/0f70ca_3cb72f57c7a841f188a1508c985e8b0e~mv2.jpg">
+                            <ul class="social">
+								<div class="col-lg-12">
+									</div>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Private Auto Presenting Sponsors</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="https://static.wixstatic.com/media/0f70ca_92f5cd58fadc4bd18f4aa157232dc12a~mv2.png/v1/fill/w_650,h_650,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/0f70ca_92f5cd58fadc4bd18f4aa157232dc12a~mv2.png">
+                            
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Blackout Coffee Co.</h3>
+                        
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+<img src="https://static.wixstatic.com/media/0f70ca_ded5ce216a5c4ac48e60bcf16efb74d5~mv2.jpg/v1/fill/w_600,h_600,al_c,lg_1,q_80,enc_auto/0f70ca_ded5ce216a5c4ac48e60bcf16efb74d5~mv2.jpg">                           
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">BANG Energy</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+<img src="https://static.wixstatic.com/media/0f70ca_20efeb19dfdf4fdf9076f280e2ca11f7~mv2.jpg/v1/fill/w_600,h_600,al_c,lg_1,q_80,enc_auto/0f70ca_20efeb19dfdf4fdf9076f280e2ca11f7~mv2.jpg">                          
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">BoyntonBeachDetailing </h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+<img src="https://static.wixstatic.com/media/0f70ca_db73f072650a4b45bba0bacbbbae82be~mv2.jpg/v1/fill/w_696,h_696,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/0f70ca_db73f072650a4b45bba0bacbbbae82be~mv2.jpg" >                            
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Hagerty</h3>
+                        </div>
+                    </div>
+                </div>
+				<div class="col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+<img src="https://static.wixstatic.com/media/0f70ca_ac76e3ea55d842668f1023079c063608~mv2.jpg/v1/fill/w_600,h_600,al_c,lg_1,q_80,enc_auto/0f70ca_ac76e3ea55d842668f1023079c063608~mv2.jpg">                           
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">RMM Motorcyle Rentals</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+<img src="https://static.wixstatic.com/media/0f70ca_0aceb74cfcae4fc7b0a5c29100dea50e~mv2.png/v1/fill/w_600,h_600,al_c,lg_1,q_85,enc_auto/0f70ca_0aceb74cfcae4fc7b0a5c29100dea50e~mv2.png" >             
+						</div>
+                        <div class="team-content">
+                            <h3 class="title">Backdraft-Jackson</h3>
+                        </div>
+                    </div>
+                </div>
+				
+				                <div class="col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+<img src="https://static.wixstatic.com/media/0f70ca_fb43e9cde5144156900a1092107a4e56~mv2.jpg/v1/fill/w_696,h_696,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/0f70ca_fb43e9cde5144156900a1092107a4e56~mv2.jpg" >                           
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Lamborghini Palm Beach</h3>
+                          
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+<img src="https://static.wixstatic.com/media/0f70ca_cadc0553a2ee4b179f6e1cb45efd641c~mv2.jpg/v1/fill/w_600,h_600,al_c,lg_1,q_80,enc_auto/0f70ca_cadc0553a2ee4b179f6e1cb45efd641c~mv2.jpg" >                          
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">McLaren Palm Beach</h3>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+<img src="https://static.wixstatic.com/media/0f70ca_cd395dce66fa4b2fb4eb285ac3e99043~mv2.jpg/v1/fill/w_600,h_600,al_c,lg_1,q_80,enc_auto/0f70ca_cd395dce66fa4b2fb4eb285ac3e99043~mv2.jpg" >                          
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Aston Martin Palm Beach</h3>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+							<img src="https://static.wixstatic.com/media/0f70ca_b9187a7935c54a1d883250949f5b27e5.jpg/v1/fill/w_696,h_696,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/0f70ca_b9187a7935c54a1d883250949f5b27e5.jpg" >                   
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Jaguar Palm Beach</h3>
+                           
+                        </div>
+                    </div>
+                </div>
+
+				<div class="col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="https://static.wixstatic.com/media/0f70ca_d5fc00f9e8754b7fa0aab0b7c9861327~mv2.jpg/v1/fill/w_600,h_600,al_c,lg_1,q_80,enc_auto/0f70ca_d5fc00f9e8754b7fa0aab0b7c9861327~mv2.jpg">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Land Rover Palm Beach</h3>
+                           
+                        </div>
+                    </div>
+                </div>
+
+				<div class="col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="https://static.wixstatic.com/media/0f70ca_205fb021ff00481ab0e35d88910230f8~mv2.jpg/v1/fill/w_696,h_696,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/0f70ca_205fb021ff00481ab0e35d88910230f8~mv2.jpg">
+                   
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">9Automotion Porsche</h3>
+                           
+                        </div>
+                    </div>
+                </div> 
+
+				<div class="col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="https://static.wixstatic.com/media/0f70ca_756ac6674d9345d98f1f7a9077d81d20~mv2.jpg/v1/fill/w_800,h_500,al_c,q_85,enc_auto/0f70ca_756ac6674d9345d98f1f7a9077d81d20~mv2.jpg">
+                   
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">FLA Car Shows</h3>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</div>
+	<!-- End Stuff -->
 	
 	<!-- Start Contact info -->
 	<div class="contact-imfo-box">

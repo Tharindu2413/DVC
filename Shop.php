@@ -3,6 +3,21 @@
       error_reporting(0);
       include ('./connection.php');
       $id = $_SESSION['id'];
+
+	  $delid = $_GET['id'];
+        $type = $_GET['type'];
+ 
+        if($type == 'delete'){
+          $sql1="select * from 	product WHERE id='$delid'";
+          $res=    mysqli_fetch_assoc(mysqli_query($con,$sql1));
+          $pic = $res['image'];
+          $sql2 = "DELETE FROM product WHERE id='$delid'";
+          unlink("./images/products/".$pic);
+          mysqli_query($con, $sql2);
+          $msg =  "Successfully Deleted";
+          echo "<script type='text/javascript'> document.location = './Shop.php'; </script>";
+
+        }
 ?>
 
 
@@ -16,7 +31,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
  
      <!-- Site Metas -->
-    <title>Home - CARS & COFFEE PALM BEACH</title>  
+    <title>Shop - CARS & COFFEE PALM BEACH</title>  
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -33,9 +48,6 @@
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
-	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css' />
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css' />
-  <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet" />
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -48,7 +60,7 @@
 	<header class="top-navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
-				<a class="navbar-brand" href="index.html">
+				<a class="navbar-brand" href="index.php">
 					<img src="images/logo1.png" alt="" />
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,7 +68,7 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbars-rs-food">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
 						<li class="nav-item active"><a class="nav-link" href="./Shop.php">Shop</a></li>
                         <li class="nav-item"><a class="nav-link" href="./events.php">Events</a></li>
 						<li class="nav-item"><a class="nav-link" href="./gallery.php">Gallery</a></li>
@@ -83,21 +95,7 @@
 
 							</div>
 						  </div>
-						<!-- <li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Pages</a>
-							<div class="dropdown-menu" aria-labelledby="dropdown-a">
-								<a class="dropdown-item" href="reservation.html">Reservation</a>
-								<a class="dropdown-item" href="stuff.html">Stuff</a>
-								<a class="dropdown-item" href="gallery.html">Gallery</a>
-							</div>
-						</li> -->
-						<!-- <li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Blog</a>
-							<div class="dropdown-menu" aria-labelledby="dropdown-a">
-								<a class="dropdown-item" href="blog.html">blog</a>
-								<a class="dropdown-item" href="blog-details.html">blog Single</a>
-							</div>
-						</li> -->
+						
 					</ul>
 				</div>
 			</div>
@@ -117,7 +115,7 @@
                   $result = mysqli_fetch_assoc($RES);
                         if ($result['usertype'] != 'Admin') {
                           ?> 
-						  <h1>Cars & Coffee Palm Beach at Tanger</h1>
+						  <!-- <h1>Cars & Coffee Palm Beach at Tanger</h1> -->
 						  <?php } else {?>
 							
 							<a href="./addproduct.php" class="btn btn-primary stretched-link">Add Products</a>
@@ -166,6 +164,11 @@
                             <span class="post">Product Name :<?= $row['name'] ?></span>
 							<span class="post">Price    : $ <?= $row['price'] ?></span>
 							<span class="post">Quantity : <?= $row['qty'] ?></span>
+							<?php
+							if($id == 1){
+					echo "<a href='./Shop.php?type=delete&id=" . $row['id'] . "'><button type='button' class='btn btn-danger'>Delete</button></a>";
+					}else{}
+					?>
                         </div>
                     </div>
                 </div>
@@ -175,6 +178,7 @@
 		</div>
 	</div>
 	<!-- End Stuff -->
+	
 	
 	
 	

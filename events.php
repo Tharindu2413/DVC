@@ -3,38 +3,55 @@
       error_reporting(0);
       include ('./connection.php');
       $id = $_SESSION['id'];
+
+	  
+	  $delid = $_GET['id'];
+        $type = $_GET['type'];
+ 
+        if($type == 'delete'){
+          $sql1="select * from 	events WHERE id='$delid'";
+          $res=    mysqli_fetch_assoc(mysqli_query($con,$sql1));
+          $pic = $res['image'];
+          $sql2 = "DELETE FROM events WHERE id='$delid'";
+          unlink("./images/events/".$pic);
+          mysqli_query($con, $sql2);
+          $msg =  "Successfully Deleted";
+          echo "<script type='text/javascript'> document.location = './events.php'; </script>";
+
+        }
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en"><!-- Basic -->
+<html lang="en">
+<!-- Basic -->
+
 <head>
 	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
-   
-    <!-- Mobile Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
- 
-     <!-- Site Metas -->
-    <title>Home - CARS & COFFEE PALM BEACH</title>  
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<!-- Mobile Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">    
+	<!-- Site Metas -->
+	<title>Home - CARS & COFFEE PALM BEACH</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Site Icons -->
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<!-- Site CSS -->
-    <link rel="stylesheet" href="css/style.css">    
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Responsive CSS -->
+	<link rel="stylesheet" href="css/responsive.css">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="css/custom.css">
 
-    <!--[if lt IE 9]>
+	<!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -46,42 +63,42 @@
 	<header class="top-navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
-				<a class="navbar-brand" href="index.html">
+				<a class="navbar-brand" href="index.php">
 					<img src="images/logo1.png" alt="" />
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-				  <span class="navbar-toggler-icon"></span>
+					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbars-rs-food">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
 						<li class="nav-item"><a class="nav-link" href="./Shop.php">Shop</a></li>
-                        <li class="nav-item active"><a class="nav-link" href="./events.php">Events</a></li>
+						<li class="nav-item active"><a class="nav-link" href="./events.php">Events</a></li>
 						<li class="nav-item"><a class="nav-link" href="./gallery.php">Gallery</a></li>
 						<li class="nav-item"><a class="nav-link" href="./contact.php">Contact</a></li>
 						<li class="nav-item"><a class="nav-link" href="./about.php">About</a></li>
-						<?php 
-                  $sql = "SELECT * FROM users WHERE id='$id' ";
-                  $RES = mysqli_query($con, $sql);
-                  $result = mysqli_fetch_assoc($RES);
-                        if ($result['usertype'] != 'Admin') {
-                          ?> 
-						
-						  <?php } else {?>
-							
+						<?php
+						$sql = "SELECT * FROM users WHERE id='$id' ";
+						$RES = mysqli_query($con, $sql);
+						$result = mysqli_fetch_assoc($RES);
+						if ($result['usertype'] != 'Admin') {
+						?>
+
+						<?php } else { ?>
+
 							<a href="./logout.php" class="btn btn-danger stretched-link">Logout</a>
-							<?php } ?>
+						<?php } ?>
 						<div class="btn-group">
-							
+
 							<!-- <button type="button" class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							  Login
 							</button>
 							 -->
-							  
 
-							</div>
-						  </div>
-						<!-- <li class="nav-item dropdown">
+
+						</div>
+				</div>
+				<!-- <li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Pages</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
 								<a class="dropdown-item" href="reservation.html">Reservation</a>
@@ -89,44 +106,44 @@
 								<a class="dropdown-item" href="gallery.html">Gallery</a>
 							</div>
 						</li> -->
-						<!-- <li class="nav-item dropdown">
+				<!-- <li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Blog</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
 								<a class="dropdown-item" href="blog.html">blog</a>
 								<a class="dropdown-item" href="blog-details.html">blog Single</a>
 							</div>
 						</li> -->
-					</ul>
-				</div>
+				</ul>
+			</div>
 			</div>
 		</nav>
 	</header>
 	<!-- End header -->
 	<!-- End header -->
-	
+
 	<!-- Start All Pages -->
 	<div class="all-page-title page-breadcrumb">
 		<div class="container text-center">
 			<div class="row">
 				<div class="col-lg-12">
 					<h1>Welcome To Events Section</h1>
-					<?php 
-                  $sql = "SELECT * FROM users WHERE id='$id' ";
-                  $RES = mysqli_query($con, $sql);
-                  $result = mysqli_fetch_assoc($RES);
-                        if ($result['usertype'] != 'Admin') {
-                          ?> 
-						  <h1>Cars & Coffee Palm Beach at Tanger</h1>
-						  <?php } else {?>
-							
-							<a href="./addEvents.php" class="btn btn-primary stretched-link">Add Events</a>
-							<?php } ?>
+					<?php
+					$sql = "SELECT * FROM users WHERE id='$id' ";
+					$RES = mysqli_query($con, $sql);
+					$result = mysqli_fetch_assoc($RES);
+					if ($result['usertype'] != 'Admin') {
+					?>
+						<h1>Cars & Coffee Palm Beach at Tanger</h1>
+					<?php } else { ?>
+
+						<a href="./addEvents.php" class="btn btn-primary stretched-link">Add Events</a>
+					<?php } ?>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- End All Pages -->
-	
+
 	<!-- Start blog -->
 	<div class="blog-box">
 		<div class="container">
@@ -137,39 +154,63 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
-			<?php
-					$stmt = $con->prepare("SELECT * FROM events");
-					$stmt->execute();
-					$result = $stmt->get_result();
-					while ($row = $result->fetch_assoc()) :
-					?>
-				<div class="col-lg-4 col-md-6 col-12">
-					<div class="blog-box-inner">
-						<div class="blog-img-box">
-							<img class="img-fluid" src="images/blog-img-01.jpg" alt="">
-						</div>
-						<div class="blog-detail">
-							<h4><?= $row['name'] ?></h4>
-							
-							<ul>
-								<li><span>Post by Admin</span></li>
-								<li>|</li>
-								<li><span>27 February 2018</span></li>
-							</ul>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis arcu. Nullam facilisis, eros in eleifend luctus, odio ante sodales augue, eget lacinia lectus erat et sem. </p>
-							<p>Sed semper orci sit amet porta placerat. Etiam quis finibus eros. </p>
-							
-						</div>
-					</div>
-				</div>
-				<?php endwhile; ?>
-			
-			</div>
+
+
 		</div>
 	</div>
 	<!-- End blog -->
-	
+	<!-- <div class="row row-cols-1 row-cols-md-2 g-4">
+	<?php
+	// $stmt = $con->prepare("SELECT * FROM events");
+	// $stmt->execute();
+	// $result = $stmt->get_result();
+	// while ($row = $result->fetch_assoc()) :
+	// 
+	?>
+					<div class="row row-cols-1 row-cols-md-2 g-4">
+						<div class="col">
+							<div class="card">
+								<img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top" alt="Hollywood Sign on The Hill" />
+								<div class="card-body">
+									<h5 class="card-title">Card title</h5>
+									<p class="card-text">
+										This is a longer card with supporting text below as a natural lead-in to
+										additional content. This content is a little bit longer.
+									</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+	</div> -->
+	<div class="row row-cols-1 row-cols-md-2 g-4">
+	<?php
+	$stmt = $con->prepare("SELECT * FROM events");
+	$stmt->execute();
+	$result = $stmt->get_result();
+	while ($row = $result->fetch_assoc()) :
+	?>
+		<div class="col">
+			<div class="card">
+				<img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top" alt="Hollywood Sign on The Hill" />
+				<div class="card-body">
+					<h5 class="card-title"><?=$row['name']?></h5>
+					<p class="card-text">
+						This is a longer card with supporting text below as a natural lead-in to
+						additional content. This content is a little bit longer.
+					</p>
+					<?php
+					
+					if($id == 1){
+					echo "<a href='./events.php?type=delete&id=" . $row['id'] . "'><button type='button' class='btn btn-danger'>Delete</button></a>";
+					}else{}
+					?>
+				</div>
+			</div>
+		</div>
+		<?php endwhile; ?>
+	</div>
+
 	<!-- Start Contact info -->
 	<div class="contact-imfo-box">
 		<div class="container">
@@ -179,7 +220,7 @@
 					<div class="overflow-hidden">
 						<h4>Phone</h4>
 						<p class="lead">
-							561-756-3063						</p>
+							561-756-3063 </p>
 					</div>
 				</div>
 				<div class="col-md-4">
@@ -200,13 +241,13 @@
 						</p>
 					</div>
 				</div>
-				
-				
+
+
 			</div>
 		</div>
 	</div>
 	<!-- End Contact info -->
-	
+
 	<!-- Start Footer -->
 	<footer class="footer-area bg-f">
 		<div class="container">
@@ -217,9 +258,9 @@
 						Cars & Coffee Palm Beach
 
 						at Tanger Outlets Palm Beach
-						
+
 						1751 Palm Beach Lakes Blvd.
-						
+
 						West Palm Beach, FL 33401</p>
 				</div>
 				<div class="col-lg-3 col-md-6">
@@ -255,7 +296,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="copyright">
 			<div class="container">
 				<div class="row">
@@ -265,24 +306,25 @@
 				</div>
 			</div>
 		</div>
-		
+
 	</footer>
 	<!-- End Footer -->
-	
+
 	<a href="#" id="back-to-top" title="Back to top" style="display: none;"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></a>
 
 	<!-- ALL JS FILES -->
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-    <!-- ALL PLUGINS -->
-	
+	<!-- ALL PLUGINS -->
+
 	<script src="js/jquery.superslides.min.js"></script>
 	<script src="js/images-loded.min.js"></script>
 	<script src="js/isotope.min.js"></script>
 	<script src="js/baguetteBox.min.js"></script>
 	<script src="js/form-validator.min.js"></script>
-    <script src="js/contact-form-script.js"></script>
-    <script src="js/custom.js"></script>
+	<script src="js/contact-form-script.js"></script>
+	<script src="js/custom.js"></script>
 </body>
+
 </html>
